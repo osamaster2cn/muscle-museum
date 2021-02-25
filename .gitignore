@@ -35,6 +35,7 @@ public/uploads/
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
-/spec/fixtures/
 
-/.idea
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+/spec/fixtures/
