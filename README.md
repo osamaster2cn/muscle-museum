@@ -39,6 +39,6 @@
 - 本番環境
     - Heroku
 - 使用エディタ
-    - VSCode
+    - RubyMine
 - 設計ツール
     - Cacoo
