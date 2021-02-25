@@ -1,0 +1,52 @@
+p {
+  line-height: 0.5;
+}
+
+body {
+  background-color: #fafafa;
+  font-size: 14px;
+  color: #262626;
+}
+
+.wrap {
+  background: #fff;
+  padding: 20px;
+  border: none;
+}
+
+.title{
+  display: block;
+  width: 15ch;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.love {
+  background-image: url("~parts5");
+  background-repeat: no-repeat;
+  height: 36px;
+  width: 36px;
+  background-size: 36px !important;
+}
+
+.loved {
+  background-image: url("~parts7");
+  background-repeat: no-repeat;
+  height: 36px;
+  width: 36px;
+  background-size: 36px !important;
+}
+
+.field_with_errors {
+  display: contents;
+  input, select {
+    @extend .is-invalid;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .wrap {
+    background-color: #fafafa;
+  }
+}

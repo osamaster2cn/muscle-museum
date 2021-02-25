@@ -1,0 +1,29 @@
+.round-img{
+  border-radius:50%;
+  width: 150px;
+  height: 150px;
+}
+
+.rounded {
+  width: 200px;
+  height: 200px;
+}
+
+.card-list:hover {
+  opacity: 0.6;
+  transition-duration: 0.3s;
+}
+
+.setting {
+  background-image: url("~parts4.png");
+  background-repeat: no-repeat;
+  height: 24px;
+  width: 24px;
+  background-color: transparent;
+  margin: 18px 0 0 5px;
+  background-size: 20px!important;
+  border: none;
+  &:hover {
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,54 @@
+<div class="profile-wrap mt-5">
+  <div class="row">
+    <div class="mx-auto">
+      <% if @user.profile_photo? %>
+        <%= image_tag @user.profile_photo.url, class: "round-img border border-light1" %>
+      <% else %>
+        <%= image_pack_tag default_profile_photo, class: "round-img border border-light1" %>
+      <% end %>
+      <h2 class="text-secondary text-center"><%= @user.name %>
+        <% if @user == current_user %>
+          <%= link_to "", edit_user_registration_path, type:"button" ,class:"setting" %>
+        <% end %>
+      </h2>
+    </div>
+  </div>
+
+  <div class="container wrap">
+    <h6 class="text-secondary">投稿画像一覧</h6>
+    <div class="row">
+      <% @user.posts.each do |post| %>
+        <div class="col-sm-6 col-md-4 col-lg-3" id="post-<%= post.id.to_s %>">
+          <div class="card-wrap">
+            <div class="card">
+
+              <%= link_to(post_path(post)) do %>
+                <%= image_tag post.photo.url, class: "card-img-top card-list" %>
+              <% end %>
+
+              <div class="card-body">
+                <div class="row parts">
+                  <% if user_signed_in? %>
+                    <div id="like-icon-post-<%= post.id.to_s %>">
+                      <% if post.liked_by(current_user).present? %>
+                        <%= link_to "いいねを取り消す", post_like_path(post.id, post.liked_by(current_user)), method: :DELETE, remote: true, class: "loved  hide-text" %>
+                      <% else %>
+                        <%= link_to "いいね", post_likes_path(post), method: :POST, remote: true, class: "love hide-text" %>
+                      <% end %>
+                    </div>
+                    <% if post.user_id == current_user.id %>
+                      <%= link_to post_path(post), method: :delete, remote: true, class: "ml-auto mx-0 my-auto" do %>
+                        <div class="delete-post-icon">
+                        </div>
+                      <% end %>
+                    <% end %>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

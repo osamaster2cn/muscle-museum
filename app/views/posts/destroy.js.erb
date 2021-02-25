@@ -1,0 +1,5 @@
+document.querySelector('#post-<%= @post.id.to_s %>').remove();
+
+<% flash.each do |type, message| %>
+  $("#flash_explanation").html("<div class='alert alert-<%= bootstrap_class_for(type) %> ' role='alert'><%= message.html_safe %></div>")
+<% end %>

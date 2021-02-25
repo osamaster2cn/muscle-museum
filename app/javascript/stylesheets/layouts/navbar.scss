@@ -1,0 +1,14 @@
+.navbar {
+  background-color:white;
+  border-bottom: 1px solid rgba(0, 0, 0, .0975);
+  &__brand {
+    height: 35px;
+    width: 176px;
+    background-size: 170px;
+  }
+  &__mainLogo {
+    background-repeat: no-repeat;
+    background-image: url("~logo.png");
+  }
+}
+

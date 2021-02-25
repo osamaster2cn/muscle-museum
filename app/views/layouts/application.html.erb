@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>マッスル博物館</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_pack_tag 'favicon.ico' %>
+  </head>
+
+  <body>
+      <%= render 'partial/navbar'%>
+      <%= render 'partial/flash_message'%>
+      <%= render 'partial/modal'%>
+      <%= yield %>
+      <%= render 'partial/footer' %>
+  </body>
+</html>

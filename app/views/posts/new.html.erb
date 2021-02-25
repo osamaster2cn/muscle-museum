@@ -1,0 +1,45 @@
+<% if @post.errors.any? %>
+  <%= javascript_pack_tag 'shared/new_url_render' %>
+  <%= render 'partial/error_message', { target: @post } %>
+<% end %>
+
+<div class="mb-4 mt-5">
+  <div class="row">
+    <div class="col-lg-3 offset-lg-2 wrap">
+        <p>プレビュー</p>
+        <% if @post.photo? %>
+          <%= image_tag @post.photo.url, id: "preview", class: "img-thumbnail mx-auto d-block" %>
+        <% else %>
+          <%= image_pack_tag no_image_photo, id: "preview", class: "img-thumbnail mx-auto d-block" %>
+        <% end %>
+    </div>
+    <div class="col-lg-5 wrap">
+      <%= form_with model: @post, 
+                    local: true do |f| %>
+
+        <div class="form-group">
+          <%= f.label :photo %> <span class="badge badge-danger">必須</span>
+          <%= f.file_field :photo, onchange: 'previewFileWithId(preview)', class: 'form-control' %>
+          <%= f.hidden_field :photo_cache %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :title %> <span class="badge badge-danger">必須</span>
+          <%= f.text_field :title, class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :caption %> <span class="badge badge-secondary">任意</span>
+          <%= f.text_area :caption, size: "10x5", class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :category_id %> <span class="badge badge-danger">必須</span>
+          <%= f.collection_select :category_id, Category.all, :id, :category_name, {prompt: "※ 選択してください"}, {class: 'form-control'} %>
+        </div>
+
+        <%= f.submit "投稿", class: "btn btn-primary w-100" %>
+      <% end %>
+    </div>
+  </div>
+</div>

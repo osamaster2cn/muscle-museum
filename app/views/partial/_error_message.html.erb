@@ -1,0 +1,7 @@
+<div id="error_explanation">
+  <div class="error_field alert alert-danger" role="alert">
+  <% messages = target.errors.full_messages.each do |message| %>
+    <div><%= message.html_safe %></div>
+  <% end %>
+  </div>
+</div>

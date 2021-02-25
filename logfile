@@ -1,0 +1,10 @@
+2021-02-24 15:11:30.180 JST [5397] LOG:  starting PostgreSQL 13.1 on x86_64-apple-darwin19.6.0, compiled by Apple clang version 12.0.0 (clang-1200.0.32.27), 64-bit
+2021-02-24 15:11:30.182 JST [5397] LOG:  listening on IPv6 address "::1", port 5432
+2021-02-24 15:11:30.182 JST [5397] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2021-02-24 15:11:30.182 JST [5397] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2021-02-24 15:11:30.199 JST [5398] LOG:  database system was interrupted; last known up at 2021-02-24 12:15:48 JST
+2021-02-24 15:11:30.445 JST [5398] LOG:  database system was not properly shut down; automatic recovery in progress
+2021-02-24 15:11:30.450 JST [5398] LOG:  redo starts at 0/8D337E0
+2021-02-24 15:11:30.464 JST [5398] LOG:  invalid record length at 0/8D4B470: wanted 24, got 0
+2021-02-24 15:11:30.464 JST [5398] LOG:  redo done at 0/8D4B438
+2021-02-24 15:11:30.479 JST [5397] LOG:  database system is ready to accept connections

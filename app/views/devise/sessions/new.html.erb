@@ -1,0 +1,39 @@
+<div class="main">
+  <div class="card devise-card">
+    <div class="form-wrap">
+      <div class="form-group text-center">
+        <h2 class="logo-img mx-auto"></h2>
+      </div>
+      <%= form_with scope: resource, as: resource_name,
+                      url: session_path(resource_name),
+                    local: true do |f| %>
+        
+        <div class="form-group">
+          <%= f.label :email %>
+          <%= f.email_field :email, autofocus: true, class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :password %>
+          <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "ログインする", class: "btn btn-primary w-100" %>
+        </div>
+
+      <% end %>
+
+      <div class="text-center mt-3">
+        アカウントをお持ちでないですか？
+        <%= link_to "登録する", new_user_registration_path %>
+      </div>
+
+      <div class="text-center">
+        パスワードをお忘れですか？
+        <%= link_to "再設定する", new_user_password_path %>
+      </div>
+      
+    </div>
+  </div>
+</div>
